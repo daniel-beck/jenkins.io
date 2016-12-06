@@ -1,0 +1,17 @@
+---
+layout: devbookchapter
+summary: The data model and type hierarchy Jenkins is based on
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Model
+
+[WARNING]
+====
+This section still needs to be written. Want to help? Check out the link:https://groups.google.com/forum/#!forum/jenkinsci-docs[jenkinsci-docs mailing list].
+====

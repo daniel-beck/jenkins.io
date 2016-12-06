@@ -9,20 +9,26 @@ module Awestruct
     end
 
     class Chapter
-      attr_accessor :sections, :title,
+      attr_accessor :sections, :guides, :title,
                     :file, :asciidoc, :key, :summary
 
       def initialize
         @sections = []
+        @guides = []
       end
     end
 
+    class Guide
+      attr_accessor :title, :file, :asciidoc, :key
+    end
+
     class Handbook
-      attr_accessor :book_dir, :chapters
+      attr_accessor :book_dir, :chapters, :guides
 
       def initialize(book_dir)
         @book_dir = book_dir
         @chapters = []
+        @guides = []
       end
 
     end
@@ -73,6 +79,17 @@ module Awestruct
               section.title = pagemap[full_path].title
               section.summary = pagemap[full_path].summary
               chapter.sections << section
+            end
+          end
+
+          if guides = yaml['guides']
+            guides.each do |g|
+              guide = Guide.new
+              guide.key = g
+              full_path = File.join(dir, "#{g}.adoc")
+              guide.title = pagemap[full_path].title
+              chapter.guides << guide
+              site[@name].guides << guide
             end
           end
 

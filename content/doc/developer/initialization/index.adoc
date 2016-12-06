@@ -1,0 +1,21 @@
+---
+layout: devbookchapter
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Initialization and Extensibility
+
+[WARNING]
+====
+This section still needs to be written. Want to help? Check out the link:https://groups.google.com/forum/#!forum/jenkinsci-docs[jenkinsci-docs mailing list].
+====
+
+////
+https://wiki.jenkins-ci.org/display/JENKINS/Dependency+Injection
+https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Pieces+in+GitHub
+////

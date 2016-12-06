@@ -1,0 +1,18 @@
+---
+layout: devbooksection
+references:
+- url: http://stapler.kohsuke.org/apidocs/org/kohsuke/stapler/jelly/InternationalizedStringExpression.html
+  title: API documentation for the InternationalizedStringExpression class in Stapler
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Internationalizing Messages in Jelly Views
+
+The Stapler framework provides the Jelly view functionality for Jenkins, including internationalized string expressions in Jelly views.
+Internationalized string expressions take the form of `${%message}`, with `message` being the internationalized message.
+These expressions optionally take arguments corresponding to placeholders in localized messages.

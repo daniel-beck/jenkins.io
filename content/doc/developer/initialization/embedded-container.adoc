@@ -1,0 +1,21 @@
+---
+layout: devbooksection
+summary: Why java -jar jenkins.war works
+references:
+- url: "https://github.com/jenkinsci/extras-executable-war/"
+  title: "Executable WAR repository on GitHub"
+- url: "https://github.com/jenkinsci/winstone/"
+  title: "Winstone-Jetty on GitHub"
+---
+:author:
+:description:
+:notitle:
+:sectanchors:
+:toc: left
+
+= Embedded Winstone and `executable-war`
+
+[WARNING]
+====
+This section still needs to be written. Want to help? Check out the link:https://groups.google.com/forum/#!forum/jenkinsci-docs[jenkinsci-docs mailing list].
+====

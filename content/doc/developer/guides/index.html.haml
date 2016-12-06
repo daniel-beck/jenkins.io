@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+.container
+  .row.body
+    .section
+      %h1
+        Appendix B: Index of All How-To Guides
+      %ul
+        - site.devbook.guides.each do |g|
+          %li
+            %a{:href => g.key}
+              = g.title

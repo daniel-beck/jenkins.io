@@ -1,0 +1,12 @@
+---
+layout: simplepage
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Preparing a Jelly-based View for Localization
+

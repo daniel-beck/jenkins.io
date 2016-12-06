@@ -1,0 +1,27 @@
+---
+layout: devbookchapter
+summary: How to internationalize views and messages, and how to localize them.
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Internationalization and Localization
+
+Internationalization (sometimes referred to as i18n) is the process of designing software so it can be adapted to multiple languages and regions.
+Localization (or l10n) is the adaptation of software to a specific region or language.
+
+This chapter explains how internationalization is implemented in Jenkins, as well as the tools to support both internationalization and localization.
+
+[WARNING]
+====
+This section still needs to be written. Want to help? Check out the link:https://groups.google.com/forum/#!forum/jenkinsci-docs[jenkinsci-docs mailing list].
+====
+
+////
+https://wiki.jenkins-ci.org/display/JENKINS/Internationalization + children
+https://wiki.jenkins-ci.org/display/JENKINS/Translation+Tool
+////

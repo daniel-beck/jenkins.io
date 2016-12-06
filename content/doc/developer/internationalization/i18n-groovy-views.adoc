@@ -1,0 +1,11 @@
+---
+layout: devbooksection
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Internationalizing Messages in Groovy Views

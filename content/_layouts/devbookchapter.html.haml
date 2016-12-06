@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+:ruby
+  chapter_key = File.basename(File.dirname(page.source_path))
+  index = site.devbook.chapters.index { |c| c.key == chapter_key }
+  chapter = site.devbook.chapters[index]
+
+  previous_chapter = nil
+  next_chapter = nil
+
+  if index > 0
+    previous_chapter = site.devbook.chapters[index - 1]
+  end
+
+  if index < site.devbook.chapters.size
+    next_chapter = site.devbook.chapters[index + 1]
+  end
+
+
+.container
+  .row.body
+
+    .section_nav.pagination-links
+      - if previous_chapter
+        %a.prev.page-link{:href =>  File.join('..', previous_chapter.key)}
+          ⇐ #{previous_chapter.title}
+
+      %a.index.page-link{:href => '..'}
+        Index
+
+      - if next_chapter
+        %a.next.page-link{:href =>  File.join('..', next_chapter.key)}
+          #{next_chapter.title} ⇒
+
+    .section
+      %h1
+        = page.title
+
+      = content
+
+      - if chapter.sections && chapter.sections.size > 0
+        %h2
+          Sections
+
+        %ul
+          - chapter.sections.each do |section|
+            %li
+              %a{:href => section.key}
+                = section.title
+
+      - if chapter.guides && chapter.guides.size > 0
+        %h2
+          How-To Guides
+
+        %ul
+          - chapter.guides.each do |guide|
+            %li
+              %a{:href => guide.key}
+                = guide.title
+
+    .section_nav.pagination-links
+      - if previous_chapter
+        %a.prev.page-link{:href =>  File.join('..', previous_chapter.key)}
+          ⇐ #{previous_chapter.title}
+
+      %a.index.page-link{:href => '..'}
+        Index
+
+      - if next_chapter
+        %a.next.page-link{:href =>  File.join('..', next_chapter.key)}
+          #{next_chapter.title} ⇒

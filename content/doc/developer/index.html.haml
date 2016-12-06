@@ -1,0 +1,22 @@
+---
+layout: simplepage
+title: "Jenkins Developer Guide"
+---
+
+The Jenkins Developer Guide serves as a reference for core and plugin developers.
+
+%ol
+  - site.devbook.chapters.each do |chapter|
+    %li{:style => 'font-size: 24px;'}
+      %a{:href => chapter.key}
+        = chapter.title
+      - if chapter.summary
+        %p{:style => 'font-size: 14px;'}
+          = chapter.summary
+  %li{:style => 'font-size: 24px;'}
+    %a{:href => 'guides'}
+      Appendix B: Index of All How-To Guides
+
+.page-link
+  %a{:href => '/doc'}
+    Up to all documentation

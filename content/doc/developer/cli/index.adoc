@@ -1,0 +1,17 @@
+---
+layout: devbookchapter
+summary: The inner workings of the Jenkins CLI and how to write new commands
+---
+:author:
+:description:
+:email: jenkinsci-users@googlegroups.com
+:notitle:
+:sectanchors:
+:toc: left
+
+= Jenkins CLI
+
+[WARNING]
+====
+This section still needs to be written. Want to help? Check out the link:https://groups.google.com/forum/#!forum/jenkinsci-docs[jenkinsci-docs mailing list].
+====
