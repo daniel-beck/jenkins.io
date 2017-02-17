@@ -1,5 +1,5 @@
 ---
 title: Preparing a Java Source File for Localization
-layout: devbookguide
+layout: developerguide
 wip: true
 ---

@@ -1,6 +1,6 @@
 ---
 title: Web Framework
-layout: devbooksection
+layout: developersection
 summary: How Jenkins uses the Stapler framework
 ---
 

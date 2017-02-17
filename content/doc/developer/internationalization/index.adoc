@@ -1,5 +1,5 @@
 ---
-layout: devbookchapter
+layout: developerchapter
 summary: How to internationalize views and messages, and how to localize them.
 wip: true
 title: Internationalization and Localization

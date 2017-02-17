@@ -1,6 +1,6 @@
 ---
 title: Persistence
-layout: devbookchapter
+layout: developerchapter
 references:
 - url: https://wiki.jenkins-ci.org/display/JENKINS/XStream+Tips
   title: XStream Tips

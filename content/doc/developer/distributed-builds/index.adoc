@@ -1,5 +1,5 @@
 ---
 title: Distributed Builds
-layout: devbookchapter
+layout: developerchapter
 wip: true
 ---
