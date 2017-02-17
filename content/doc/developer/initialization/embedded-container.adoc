@@ -1,5 +1,5 @@
 ---
-layout: devbooksection
+layout: developersection
 summary: Why java -jar jenkins.war works
 references:
 - url: "https://github.com/jenkinsci/extras-executable-war/"

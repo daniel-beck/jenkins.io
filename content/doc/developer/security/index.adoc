@@ -1,6 +1,6 @@
 ---
 title: Security
-layout: devbookchapter
+layout: developerchapter
 wip: true
 ---
 

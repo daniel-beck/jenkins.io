@@ -1,7 +1,7 @@
 ---
 title: Action Methods
 summary: More about action methods and how to write them to be easily testable
-layout: devbooksection
+layout: developersection
 wip: true
 ---
 

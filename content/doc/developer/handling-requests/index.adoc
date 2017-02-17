@@ -1,7 +1,7 @@
 ---
 title: Handling Requests
 summary: Explains how Jenkins routes HTTP requests, and what ways to respond exist.
-layout: devbookchapter
+layout: developerchapter
 references:
 - title: Figuring out URL binding in Stapler
   url: https://wiki.jenkins-ci.org/display/JENKINS/Figuring+out+URL+binding+of+Stapler

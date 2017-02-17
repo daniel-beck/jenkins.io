@@ -1,5 +1,5 @@
 ---
 title: Extensions
-layout: devbooksection
+layout: developersection
 wip: true
 ---

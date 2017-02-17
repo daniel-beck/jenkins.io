@@ -1,6 +1,6 @@
 ---
 title: Forms
 summary: Forms, data binding, and structured form submission
-layout: devbookchapter
+layout: developerchapter
 wip: true
 ---

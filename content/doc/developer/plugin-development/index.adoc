@@ -1,6 +1,6 @@
 ---
 title: Plugin development
 summary: About Jenkins' internal extension functionality, modules, and plugins
-layout: devbookchapter
+layout: developerchapter
 wip: true
 ---

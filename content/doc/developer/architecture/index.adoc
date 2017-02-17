@@ -1,6 +1,6 @@
 ---
 title: Architecture
-layout: devbookchapter
+layout: developerchapter
 wip: true
 ---
 

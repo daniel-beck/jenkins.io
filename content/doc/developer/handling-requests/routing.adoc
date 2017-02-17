@@ -1,7 +1,7 @@
 ---
 title: Routing Requests
 summary: How requests in Jenkins are routed to the objects ultimately responding to them
-layout: devbooksection
+layout: developersection
 wip: true
 ---
 

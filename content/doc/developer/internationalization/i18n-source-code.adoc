@@ -1,6 +1,6 @@
 ---
 title: Internationalizing Messages in Java Source Code
-layout: devbooksection
+layout: developersection
 references:
 - url: https://github.com/kohsuke/localizer
   title: Localizer project on GitHub

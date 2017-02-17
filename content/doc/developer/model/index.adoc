@@ -1,6 +1,6 @@
 ---
 title: Model
 summary: The data model and type hierarchy Jenkins is based on
-layout: devbookchapter
+layout: developerchapter
 wip: true
 ---
