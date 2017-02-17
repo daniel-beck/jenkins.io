@@ -1,0 +1,8 @@
+---
+title: Plugin Tutorial
+layout: developer
+references:
+- url: https://wiki.jenkins-ci.org/display/JENKINS/Plugin+tutorial
+  title: Plugin tutorial on the wiki
+wip: true
+---

@@ -1,0 +1,9 @@
+---
+title: Extensibility
+layout: devbookchapter
+summary: About Jenkins' internal extension functionality, modules, and plugins
+wip: true
+references:
+- url: https://wiki.jenkins-ci.org/display/JENKINS/Dependency+Injection
+  title: Dependency Injection in Jenkins
+---

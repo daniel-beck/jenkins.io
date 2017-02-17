@@ -1,0 +1,32 @@
+---
+layout: developer
+---
+
+:ruby
+  chapter_key = File.basename(File.dirname(page.source_path))
+  index = site.devbook.chapters.index { |c| c.key == chapter_key }
+  chapter = site.devbook.chapters[index]
+
+= content
+
+- if chapter.sections && chapter.sections.size > 0
+  %h2
+    Sections
+
+  %ul
+    - chapter.sections.each do |section|
+      %li
+        %a{:href => section.key}
+          = section.title
+        %br
+        = section.summary
+
+- if chapter.guides && chapter.guides.size > 0
+  %h2
+    How-To Guides
+
+  %ul
+    - chapter.guides.each do |guide|
+      %li
+        %a{:href => guide.key}
+          = guide.title

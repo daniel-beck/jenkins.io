@@ -1,0 +1,12 @@
+---
+title: Initialization and Extensibility
+layout: devbookchapter
+wip: true
+references:
+- url: https://wiki.jenkins-ci.org/display/JENKINS/Dependency+Injection
+  title: Dependency Injection in Jenkins
+---
+
+////
+https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Pieces+in+GitHub
+////
