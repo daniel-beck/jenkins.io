@@ -1,0 +1,28 @@
+---
+layout: default
+section: doc
+---
+
+.container
+  .row
+    .col-lg-3
+      = partial('developersidebar.html.haml')
+
+    .col-lg-9
+      - unless page.notitle
+        %h1
+          = page.title
+      - if page.wip
+        = partial( 'wip.adoc' )
+
+      = content
+
+      - if page.references && page.references.size > 0
+        %h2
+          References
+
+        %ul
+          - page.references.each do |reference|
+            %li
+              %a{:href => reference.url}
+                = reference.title

@@ -79,15 +79,16 @@ section: doc
         %hr/
         %h4
           Developers
+
         %h5
-          Writing plugins
+          = active_href('doc/developer', 'Reference Documentation')
         %ul
+          - site.devbook.chapters.each do |chapter|
+            %li
+              = active_href(File.join('doc/developer', chapter.key), chapter.title, :fuzzy => true)
           %li
-            %a{:href => 'https://wiki.jenkins-ci.org/display/JENKINS/Extend+Jenkins'}
-              Extend Jenkins
-          %li
-            %a{:href => 'https://wiki.jenkins-ci.org/display/JENKINS/Extension+points'}
-              Extension points
+            = active_href('doc/developer/guides', 'Appendix B: Index of All How-To Guides', :fuzzy => true)
+
         %h5
           Javadoc
         %ul

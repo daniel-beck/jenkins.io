@@ -1,0 +1,10 @@
+---
+sections:
+- i18n-source-code
+- i18n-jelly-views
+- i18n-groovy-views
+- advanced-localization
+guides:
+- prepare-a-java-source-file
+- prepare-a-jelly-view
+- prepare-a-groovy-view

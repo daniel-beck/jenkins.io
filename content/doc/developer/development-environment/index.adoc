@@ -1,0 +1,7 @@
+---
+layout: devbookchapter
+summary: Preparing your development environment for Jenkins core and plugin development
+wip: true
+---
+
+= Appendix A&#58; Setting up a Development Environment

@@ -1,0 +1,5 @@
+---
+title: Preparing a Java Source File for Localization
+layout: devbookguide
+wip: true
+---

@@ -1,0 +1,44 @@
+---
+title: "Jenkins Developer Guide"
+layout: developer
+---
+
+:css
+  ol li i.icon-warning::before {
+    content: "\f071";
+    color: #bf6900;
+    font-family: FontAwesome !important;
+    font-size: 14px;
+  }
+
+The Jenkins Developer Guide serves as a reference for core and plugin developers.
+
+%ol
+  - site.devbook.chapters.each do |chapter|
+    %li{:style => 'font-size: 24px;'}
+      %a{:href => chapter.page.url}
+        = chapter.title
+      - if chapter.page.wip
+        %i.icon-warning{:title => 'Work in progress'}
+          &nbsp;
+      - if chapter.page.summary
+        %p{:style => 'font-size: 14px;'}
+          = chapter.page.summary
+      %ol
+        - chapter.sections.each do | section |
+          %li{:style => 'font-size: 18px;'}
+            %a{:href => section.page.url}
+
+              = section.title
+
+            - if section.page.wip
+              %i.icon-warning{:title => 'Work in progress'}
+                &nbsp;
+  %li{:style => 'font-size: 24px;'}
+    %a{:href => 'guides'}
+      Appendix B: Index of All How-To Guides
+
+- #
+  .page-link
+  %a{:href => '/doc'}
+    Up to all documentation

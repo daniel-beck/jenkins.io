@@ -1,0 +1,6 @@
+---
+layout: devbookguide
+title: Preparing a Jelly-based View for Localization
+notitle: true
+wip: true
+---
