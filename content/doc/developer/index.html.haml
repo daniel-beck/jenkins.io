@@ -9,7 +9,6 @@ layout: developer
     color: #bf6900;
     font-family: FontAwesome !important;
     font-size: 10px;
-    opacity: 0.7;
     vertical-align: middle;
   }
 
@@ -20,9 +19,13 @@ The Jenkins Developer Guide serves as a reference for core and plugin developers
     %li{:style => 'font-size: 24px;'}
       %a{:href => chapter.page.url}
         = chapter.title
-      - if chapter.page.wip && (!chapter.page.references || chapter.page.references.length == 0)
-        %i.icon-warning{:title => 'Work in progress'}
-          &nbsp;
+      - if chapter.page.wip
+        - if !chapter.page.references || chapter.page.references.length == 0
+          %i.icon-warning{:title => 'Early work in progress'}
+            &nbsp;
+        - else
+          %i.icon-warning{:title => 'Partial work in progress', :style => 'opacity: 0.5;'}
+            &nbsp;
       - if chapter.page.summary
         %p{:style => 'font-size: 14px;'}
           = chapter.page.summary
