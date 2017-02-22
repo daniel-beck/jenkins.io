@@ -1,5 +1,5 @@
 ---
-layout: developerguide
 title: Preparing a Jelly-based View for Localization
+layout: developerguide
 wip: true
 ---
