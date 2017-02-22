@@ -2,6 +2,9 @@
 title: Architecture
 layout: developerchapter
 wip: true
+references:
+- url: https://wiki.jenkins-ci.org/display/JENKINS/Architecture
+  title: Architecture wiki page
 ---
 
 This section provides a high level overview of the Jenkins architecture.

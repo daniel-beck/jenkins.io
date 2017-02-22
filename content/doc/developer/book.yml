@@ -15,4 +15,5 @@ chapters:
   - cli
   - testing
   - plugin-development
+  - building
   - development-environment

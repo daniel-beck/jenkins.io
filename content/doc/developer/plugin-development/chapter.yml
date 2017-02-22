@@ -1,2 +1,4 @@
 ---
 sections:
+guides:
+- writing-an-scm-plugin

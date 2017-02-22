@@ -28,5 +28,9 @@ layout: developer
   %ul
     - chapter.guides.each do |guide|
       %li
-        %a{:href => guide.key}
+        %a{:href => guide.key}><
           = guide.title
+          - if guide.page.description
+            \:
+            = guide.page.description
+
