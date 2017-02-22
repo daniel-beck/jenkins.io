@@ -20,4 +20,6 @@ references:
   title: Defining a new extension point
 - url: https://wiki.jenkins-ci.org/display/JENKINS/My+class+is+missing+descriptor
   title: My class is missing descriptor
+- url: https://wiki.jenkins-ci.org/display/JENKINS/Extension+Point+for+Project+Views+Navigation
+  title: Extension Point for Project Views Navigation # TODO make into guide or remove as obsolete with BO
 ---
