@@ -3,10 +3,15 @@ title: Action Methods
 summary: More about action methods and how to write them to be easily testable
 layout: developersection
 wip: true
+references:
+- title: Web Method
+  url: https://wiki.jenkins-ci.org/display/JENKINS/Web+Method
 ---
 
+////
 AncestorInPath
 Header
 QueryParameter
 StaplerRequest
 StaplerResponse
+////

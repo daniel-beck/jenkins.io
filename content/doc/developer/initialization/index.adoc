@@ -1,10 +1,7 @@
 ---
-title: Initialization and Extensibility
+title: Initialization and Startup
 layout: developerchapter
 wip: true
-references:
-- url: https://wiki.jenkins-ci.org/display/JENKINS/Dependency+Injection
-  title: Dependency Injection in Jenkins
 ---
 
 ////
