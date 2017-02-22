@@ -19,7 +19,7 @@ module Awestruct
     end
 
     class Guide
-      attr_accessor :title, :file, :asciidoc, :key, :url, :chapter, :page
+      attr_accessor :title, :file, :asciidoc, :key, :url, :chapter, :page, :description
     end
 
     class Handbook

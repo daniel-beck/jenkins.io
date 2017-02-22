@@ -3,6 +3,11 @@ title: Routing Requests
 summary: How requests in Jenkins are routed to the objects ultimately responding to them
 layout: developersection
 wip: true
+references:
+- url: http://stapler.kohsuke.org/reference.html
+  title: Stapler URL Binding Reference
+- url: https://wiki.jenkins-ci.org/display/JENKINS/Figuring+out+URL+binding+of+Stapler
+  title: Figuring out URL binding of Stapler
 ---
 
 Let's look at some real-world examples for the most common ways to process (part of) the path:

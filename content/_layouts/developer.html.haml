@@ -24,5 +24,8 @@ section: doc
         %ul
           - page.references.each do |reference|
             %li
-              %a{:href => reference.url}
+              %a{:href => reference.url}<>
                 = reference.title
+              - if reference.description
+                \:
+                = reference.description

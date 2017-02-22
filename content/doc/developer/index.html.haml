@@ -8,7 +8,9 @@ layout: developer
     content: "\f071";
     color: #bf6900;
     font-family: FontAwesome !important;
-    font-size: 14px;
+    font-size: 10px;
+    opacity: 0.7;
+    vertical-align: middle;
   }
 
 The Jenkins Developer Guide serves as a reference for core and plugin developers.
@@ -18,7 +20,7 @@ The Jenkins Developer Guide serves as a reference for core and plugin developers
     %li{:style => 'font-size: 24px;'}
       %a{:href => chapter.page.url}
         = chapter.title
-      - if chapter.page.wip
+      - if chapter.page.wip && (!chapter.page.references || chapter.page.references.length == 0)
         %i.icon-warning{:title => 'Work in progress'}
           &nbsp;
       - if chapter.page.summary
@@ -31,14 +33,9 @@ The Jenkins Developer Guide serves as a reference for core and plugin developers
 
               = section.title
 
-            - if section.page.wip
+            - if section.page.wip && (!section.page.references || section.page.references.length == 0)
               %i.icon-warning{:title => 'Work in progress'}
                 &nbsp;
   %li{:style => 'font-size: 24px;'}
     %a{:href => 'guides'}
-      Appendix B: Index of All How-To Guides
-
-- #
-  .page-link
-  %a{:href => '/doc'}
-    Up to all documentation
+      Appendix C: Index of All How-To Guides

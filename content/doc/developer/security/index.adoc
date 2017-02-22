@@ -7,6 +7,8 @@ wip: true
 // this is a straight import of https://wiki.jenkins-ci.org/display/JENKINS/Making+your+plugin+behave+in+secured+Jenkins
 // TODO check contents and remove wiki page
 
+// TODO Include https://wiki.jenkins-ci.org/display/JENKINS/Jelly+and+XSS+prevention
+
 == Security Architecture of Jenkins
 
 Jenkins has a security mechanism in place so that the deployer of Jenkins can control who gets access to what part of Jenkins. The key components of this mechanism are the followings:
