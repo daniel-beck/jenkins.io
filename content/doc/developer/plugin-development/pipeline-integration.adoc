@@ -1,15 +1,8 @@
 ---
-layout: documentation
+layout: developerguide
 title: Writing Plugins for Pipeline
-section: doc
 ---
-:description:
-:author:
-:email: jenkinsci-docs@googlegroups.com
-:sectanchors:
 :toc:
-:imagesdir: /doc/book/resources
-:hide-uri-scheme:
 
 ////
 Provided by Patrick Wolf by email, presumably based on a12c5e1263f576d0b8b2eb58ca9eddc2140171a2

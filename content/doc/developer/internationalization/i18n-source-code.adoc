@@ -36,21 +36,22 @@ Localizer will generate a class that looks similar to the following from these r
 package org.example.package
 
 public class Messages {
-    private final static ResourceBundleHolder holder = ResourceBundleHolder.get(Messages.class); // [1]
+    private final static ResourceBundleHolder holder = ResourceBundleHolder.get(Messages.class); // <1>
 
-    public static String Example_Description() { // [2]
+    public static String Example_Description() { // <2>
         return holder.format("Example.Description");
     }
 
-    public static Localizable _Example_Description() { // [3]
+    public static Localizable _Example_Description() { // <3>
         return new Localizable(holder, "Example.Description");
     }
 }
 ----
+<1> `ResourceBundleHolder` is an internal utility class wrapping access to the localized `.properties` files
+<2> Generated method returning the localized string for the +Example.Description+ property files entry
+<3> Generated method returning the +Localizable+ instance for the +Example.Description+ property files entry
 
-`ResourceBundleHolder` (see [1]) is an internal utility class wrapping access to the localized `.properties` files.
-
-The generated methods names ([2] and [3]) correspond to the key in the properties files (but don't match exactly due to Java identifier constraints).
+The generated methods names  correspond to the key in the properties files (but don't match exactly due to Java identifier constraints).
 Each key in the resource files will result in the generation of a pair of methods: One returning `String`, the other returning `Localizable`.
 `Localizable` is a type provided by the Localizer library that allows localizing a message to a specific locale.
 This is rarely needed however, as a call to `Messages.Example_Description()` will return the localized message for the current locale.
