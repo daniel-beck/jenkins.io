@@ -9,6 +9,7 @@ module Awestruct
     end
 
     class Chapter
+      # TODO replace half of these with usages of :page
       attr_accessor :sections, :guides, :title,
                     :file, :asciidoc, :key, :summary, :page
 
@@ -19,7 +20,7 @@ module Awestruct
     end
 
     class Guide
-      attr_accessor :title, :file, :asciidoc, :key, :url, :chapter, :page, :description
+      attr_accessor :file, :key, :chapter, :page
     end
 
     class Handbook
@@ -90,8 +91,6 @@ module Awestruct
               guide.key = g
               full_path = File.join(dir, "#{g}.adoc")
               guide.page = pagemap[full_path]
-              guide.url = pagemap[full_path].url
-              guide.title = pagemap[full_path].title
               chapter.guides << guide
               guide.chapter = chapter
               site[@name].guides << guide

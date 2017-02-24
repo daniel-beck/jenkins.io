@@ -7,5 +7,5 @@ layout: developer
 %ul
   - site.devbook.guides.each do |g|
     %li
-      %a{:href => g.url}
-        = "#{g.chapter.title}: #{g.title}"
+      %a{:href => g.page.url}
+        = "#{g.chapter.title}: #{g.page.title}"
