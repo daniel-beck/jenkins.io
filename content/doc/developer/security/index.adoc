@@ -20,14 +20,9 @@ Jenkins has a security mechanism in place so that the administrator of Jenkins c
 
 So the overall picture is this; various objects in Jenkins (such as jenkinsdoc:Job[], jenkinsdoc:Jenkins[], jenkinsdoc:User[], jenkinsdoc:View[], etc.) are jenkinsdoc:AccessControlled[] objects, and therefore they own ACLs. The code is then written in such a way that before a security-sensitive operation is performed, it checks ACL.
 
-For example, the following code is taken from the Jenkins class, which lets you shut down the JVM by requesting {{/exit}}. You can easily imagine that in a security sensitive environment you don't want random users to invoke this, so it makes sure that the caller has the "ADMINISTER" permission of the system before proceeding to do the work:
+For example, the following code is taken from the Jenkins class, which lets you shut down the JVM by requesting +/exit+. You can easily imagine that in a security sensitive environment you don't want random users to invoke this, so it makes sure that the caller has the "ADMINISTER" permission of the system before proceeding to do the work:
 
 ----
-    /**
-     * Shutdown the system.
-     * @since 1.161
-     */
-    @RequirePOST // <1>
     public void doExit( StaplerRequest req, StaplerResponse rsp ) throws IOException {
         checkPermission(ADMINISTER); // <2>
         LOGGER.severe(String.format("Shutting down VM as requested by %s from %s",
@@ -43,8 +38,7 @@ For example, the following code is taken from the Jenkins class, which lets you 
         System.exit(0);
     }
 ----
-<1> Enforces the use of a +POST+ request, which is covered by CSRF protection, if enabled.
-<2> This throws an exception if the user accessing this URL doesn't have +Administer+ permission.
+<1> This throws an exception if the user accessing this URL doesn't have +Administer+ permission.
 
 If the administrator configured no security mechanism, the checkPermission method simply becomes no-op. The administrator could configure matrix-based ACL, in which case every +AccessControlled+ object will share the single ACL (whose contents is controlled by the configuration done by the administrator.) In more elaborate case, each +AccessControlled+ object might have different ACLs. In all cases, this is the code you need to write.
 
