@@ -29,7 +29,7 @@ layout: developer
     - chapter.guides.each do |guide|
       %li
         %a{:href => guide.key}><
-          = guide.title
+          = guide.page.title
           - if guide.page.description
             \:
             = guide.page.description
