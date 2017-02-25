@@ -11,7 +11,7 @@ wip: true
 
 == Security Architecture of Jenkins
 
-Jenkins has a security mechanism in place so that the deployer of Jenkins can control who gets access to what part of Jenkins. The key components of this mechanism are the followings:
+Jenkins has a security mechanism in place so that the administrator of Jenkins can control who gets access to what part of Jenkins. The key components of this mechanism are the followings:
 
 * jenkinsdoc:Permission[], which represents an activity that requires a security privilege. This is usually a verb, like "configure", "administer", "tag", etc.
 * +Authentication+, which represents the current user and roles (AKA groups) he/she has. When a thread runs in Jenkins, it always carry an +Authentication+ object implicitly, which represents the user that the thread is serving. (If a thread is a part of Jenkins and not serving any user request, like +Executor{+}s, then it carries an almighty "system" +Authentication+ object.)
@@ -27,21 +27,26 @@ For example, the following code is taken from the Jenkins class, which lets you 
      * Shutdown the system.
      * @since 1.161
      */
+    @RequirePOST // <1>
     public void doExit( StaplerRequest req, StaplerResponse rsp ) throws IOException {
-        checkPermission(ADMINISTER);
+        checkPermission(ADMINISTER); // <2>
         LOGGER.severe(String.format("Shutting down VM as requested by %s from %s",
-                getAuthentication(), req.getRemoteAddr()));
-        rsp.setStatus(HttpServletResponse.SC_OK);
-        rsp.setContentType("text/plain");
-        PrintWriter w = rsp.getWriter();
-        w.println("Shutting down");
-        w.close();
+                getAuthentication().getName(), req!=null?req.getRemoteAddr():"???"));
+        if (rsp!=null) {
+            rsp.setStatus(HttpServletResponse.SC_OK);
+            rsp.setContentType("text/plain");
+            try (PrintWriter w = rsp.getWriter()) {
+                w.println("Shutting down");
+            }
+        }
 
         System.exit(0);
     }
 ----
+<1> Enforces the use of a +POST+ request, which is covered by CSRF protection, if enabled.
+<2> This throws an exception if the user accessing this URL doesn't have +Administer+ permission.
 
-If the deployer configured no security mechanism, the checkPermission method simply becomes no-op. The deployer could configure matrix-based ACL, in which case every +AccessControlled+ object will share the single ACL (whose contents is controlled by the configuration done by the deployer.) In more elaborate case, each +AccessControlled+ object might have different ACLs. In all cases, this is the code you need to write.
+If the administrator configured no security mechanism, the checkPermission method simply becomes no-op. The administrator could configure matrix-based ACL, in which case every +AccessControlled+ object will share the single ACL (whose contents is controlled by the configuration done by the administrator.) In more elaborate case, each +AccessControlled+ object might have different ACLs. In all cases, this is the code you need to write.
 
 == What do plugins need to do?
 
