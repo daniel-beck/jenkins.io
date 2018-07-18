@@ -1,0 +1,97 @@
+---
+layout: documentation
+title: Environment Variable Sanitization
+---
+ifdef::backend-html5[]
+:notitle:
+:description:
+:author:
+:email: jenkinsci-users@googlegroups.com
+:sectanchors:
+:toc: left
+endif::[]
+
+Environment variables are a common way to pass information like build parameters to build steps. Many plugins add environment variables so that builds can behave differently based on those inputs.
+
+Introduced in Jenkins 2.138 and LTS 2.121.3, environment variable sanitization is a system to protect against potentially unsafe use of environment variables in build scripts that have not been written with use cases like Jenkins in mind, where the user (or other process) starting a parameterized build is not necessarily the same user as the author of the script.
+
+== Example Using Windows Batch Build Step
+
+Windows Batch scripts evaluate environment variable values.
+This means that, depending on the Batch script, commands like the following are unsafe:
+
+[listing]
+echo "%ENVVAR%"
+
+In this example, `ENVVAR` could be a build parameter, or contributed by a plugin from sources outside Jenkins' control.
+Its value could be something like the following:
+
+[listing]
+" & set & dir c:\users & echo & net localgroup administrators & whoami & echo "too late
+
+Executing the script will result in the execution of the commands listed in the variable value, producing output similar to the following:
+
+[listing]
+----
+TODO
+----
+
+== Configuring Environment Variable Sanitization
+
+=== Minimum Versions
+
+The built-in Shell and Batch build steps support environment variable sanitization from Jenkins 2.138 and LTS 2.121.3.
+Pipeline `bat` and `sh` steps also have limited support for these options starting in plugin:durable-task[Durable Task Plugin] version TODO.
+
+=== Global Configuration
+
+The default environment variable sanitization rules and related options can be configured in _Manage Jenkins » Configure Global Security_.
+On new Jenkins installations, safe default options protecting against known security issues are applied automatically.
+Jenkins instances updated from earlier releases will recommend that administrators apply these options.
+
+==== Sanitization Rules
+
+One globally applicable rule is available by default: *Sanitize Batch Build Steps*.
+As the exact conditions for unsafe environment variables are specific to the script language used, so are the specific sanitization rules.
+
+They also differ in how they can be configured to behave.
+In the case of *Sanitize Batch Build Steps*, it offers the following modes to allow control over script behavior:
+
+. *Fail the build step* is the safest mode.
+  If a Batch build step is about to start, and an environment variable has an unsafe value, the build step will instead simply fail.
+. *Undefine unsafe variables* will remove variables identified to have unsafe values from the build step's environment.
+  Note that this can result in unexpected behavior when arguments to commands suddenly are missing.
+. *Replace unsafe variables* will replace the value of variables identified to have unsafe values with a safe value: `REDACTED`.
+  This is similar to the previous option, but instead of potentially receiving no arguments, commands might receive a wrong argument (and hopefully fail).
+. *Log warning* will only log a warning message when an unsafe environment variable value is encountered, but otherwise will pass it on to the build step
+  This option is the most unsafe, as it will not prevent command execution as shown above.
+
+The behavior selected for *Sanitize Batch Build Steps* here is the one applied to `bat` steps in pipeline.
+See the section below (TODO link) on how to customize the behavior for pipelines.
+
+==== Additional Options
+
+Additionally, administrators can allow users with permission to configure jobs to augment or override environment variable sanitization on a per-build step basis.
+The goal of this feature is to make it easier to migrate larger instances with legitimate sources of potentially unsafe environment variables for some jobs to a safe set of global rules, while not preventing build execution.
+
+By default, no overrides in job configurations are allowed.
+See the discussion below on the specific options for potential reasons to enable them on a specific instance.
+
+=== Job-Specific Configuration
+
+If per-build step configuration of environment variable sanitization rules is enabled, some build steps allow configuring these rules.
+This example discusses the *Execute Windows batch* build step specifically.
+
+Two per-build step sanitization rules are included with Jenkins:
+
+. *Sanitize Batch Environment* will override the global default rule of the same name.
+  This will allow overriding the global default of e.g. failing the build step to a less safe behavior if the job is not considered at risk (or deliberately allows command execution), or even apply a more restrictive policy than is defined globally.
+. *Retain Environment Variables* is a rule that could apply to any build step.
+  It allows specifying a list of environment variable names, and all environment variables not listed in this rule will not be part of the build step's environment.
+  As the local rules are applied before the global rules, this can be combined with a global "fail the build step" Batch sanitization rule to _not_ fail the build step if the only unsafe values are in variables not even used in the build script.
+
+== Securing Pipelines
+
+Pipelines can have the same problems of various sources providing unsafe environment variables.
+For this reason, the global defaults are also applied to `bat` and `sh` steps in pipelines (if applicable).
+

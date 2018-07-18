@@ -66,6 +66,7 @@ The following topics discuss other security features that are on by default. You
 
 * https://wiki.jenkins-ci.org/display/JENKINS/Configuring+Content+Security+Policy[Configuring Content Security Policy] --- protect users of Jenkins from malicious builds
 * https://wiki.jenkins-ci.org/display/JENKINS/Markup+formatting[Markup formatting] --- protect users of Jenkins from malicious users of Jenkins
+* link:environment-variable-sanitization[Environment variable sanitization] --- protect from unsafe environment variable values e.g. from build parameters
 
 
 == Disabling Security
