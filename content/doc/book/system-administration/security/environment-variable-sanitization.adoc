@@ -95,3 +95,8 @@ Two per-build step sanitization rules are included with Jenkins:
 Pipelines can have the same problems of various sources providing unsafe environment variables.
 For this reason, the global defaults are also applied to `bat` and `sh` steps in pipelines (if applicable).
 
+== Alternative Options
+
+// TODO move to jenkinsci and properly host it
+The https://github.com/jenkinsci-cert/env2file-plugin[Save Environment Variables to Files Plugin] will save the values of environment variables passed to the build in temporary files, and replace each environment variable's value with the path the to respective file.
+This way, rather than accessing environment variables directly, they values passed into the build will be available in files, which allows for more flexible variable handling, especially when involving long values.
