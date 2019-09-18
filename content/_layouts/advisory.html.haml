@@ -47,20 +47,26 @@ notitle: true
       %li
         - if site._generated[:update_center].plugins[plugin.name]
           %a{:href => 'https://plugins.jenkins.io/' + plugin.name }
-            = site._generated[:update_center].plugins[plugin.name].title
+            - if plugin.title
+              = plugin.title
+            - else
+              = site._generated[:update_center].plugins[plugin.name].title
             Plugin
         - else
-          = plugin.title || plugin.name
+          - if plugin.title
+            = plugin.title
+          - else
+            = plugin.name
           Plugin
 
 
 - described_issues = page.issues.dup.keep_if { |i| i.title && i.description }
 - if described_issues.size > 0
   %h2
-    Descriptions
+    Description
   - described_issues.each do | issue |
     - if issue.plugins && issue.plugins[0]
-      - plugin_name = site._generated[:update_center].plugins[issue.plugins[0].name]&.title || issue.plugins[0]&.title || issue.plugins[0].name
+      - plugin_name = issue.plugins[0]&.title || site._generated[:update_center].plugins[issue.plugins[0].name]&.title || issue.plugins[0].name
     %h3{:id => issue.id}
       - if plugin_name
         = issue.title.gsub(/PLUGIN_NAME/, "#{plugin_name} Plugin")
@@ -101,16 +107,20 @@ notitle: true
 %ul
   - if page.core&.weekly&.previous
     %li
-      Jenkins weekly up to and including
+      %strong
+        Jenkins weekly
+      up to and including
       = page.core.weekly&.previous
   - if page.core&.lts&.previous
     %li
-      Jenkins LTS up to and including
+      %strong
+        Jenkins LTS
+      up to and including
       = page.core.lts&.previous
   - plugins.each do | plugin |
     %li
       %strong
-        = site._generated[:update_center].plugins[plugin.name]&.title || plugin.title || plugin.name
+        = plugin.title || site._generated[:update_center].plugins[plugin.name]&.title || plugin.name
         Plugin
       - if plugin.previous
         up to and including
@@ -124,16 +134,20 @@ notitle: true
   %ul
     - if page.core&.weekly&.fixed
       %li
-        Jenkins weekly should be updated to version
+        %strong
+          Jenkins weekly
+        should be updated to version
         = page.core.weekly&.fixed
     - if page.core&.lts&.fixed
       %li
-        Jenkins LTS should be updated to version
+        %strong
+          Jenkins LTS
+        should be updated to version
         = page.core.lts&.fixed
     - fixed_plugins.each do | plugin |
       %li
         %strong
-          = site._generated[:update_center].plugins[plugin.name]&.title || plugin.title || plugin.name
+          = plugin.title || site._generated[:update_center].plugins[plugin.name]&.title || plugin.name
           Plugin
         should be updated to version
         = plugin.fixed
@@ -147,7 +161,7 @@ notitle: true
   %ul
     - unfixed_plugins.each do | plugin |
       %li
-        = site._generated[:update_center].plugins[plugin.name]&.title || plugin.title || plugin.name
+        = plugin.title || site._generated[:update_center].plugins[plugin.name]&.title || plugin.name
         Plugin
 
 

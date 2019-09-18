@@ -51,7 +51,13 @@ section: security
                               Affects Plugins:
                             - plugins.each_with_index do | plugin, idx |
                               - if site._generated[:update_center].plugins[plugin.name]
-                                %a{:href => 'https://plugins.jenkins.io/' + plugin.name, :style => 'white-space: nowrap; padding: 2px;'}
-                                  = site._generated[:update_center].plugins[plugin.name].title
+                                %a{:href => 'https://plugins.jenkins.io/' + plugin.name, :style => 'white-space: nowrap; padding: 2px;' }
+                                  - if plugin.title
+                                    = plugin.title
+                                  - else
+                                    = site._generated[:update_center].plugins[plugin.name].title
                               - else
-                                = plugin.title || plugin.name
+                                - if plugin.title
+                                  = plugin.title
+                                - else
+                                  = plugin.name
