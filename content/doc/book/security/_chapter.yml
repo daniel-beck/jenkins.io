@@ -1,0 +1,5 @@
+---
+sections:
+- securing-jenkins
+- configuring-content-security-policy
+- build-authorization

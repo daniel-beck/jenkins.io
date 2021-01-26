@@ -2,6 +2,7 @@
 chapters:
   - getting-started
   - installing
+  - security
   - using
   - pipeline
   - blueocean
