@@ -1,0 +1,20 @@
+---
+title: System-Wide Settings
+layout: documentation
+---
+:includes: ./doc/book/security/_includes
+:toc:
+
+System-wide settings related to security accomplish several goals:
+
+. Set up Jenkins to make use of infrastructure, e.g., for distributed builds.
+. Set up features that ensure Jenkins users are safe from potential attacks.
+. Ensure that job-level (mis)configuration does not negatively affect the system.
+
+Several system-wide options only provide a default, or a framework, that can then be further refined on individual items, like jobs.
+
+include::{includes}/build-authorization.adoc[]
+
+bar
+
+baz

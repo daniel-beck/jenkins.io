@@ -1,16 +1,20 @@
 ---
 layout: chapter
+title: Securing Jenkins
 ---
-ifdef::backend-html5[]
-:notitle:
-:description:
-:author:
-:email: jenkinsci-docs@googlegroups.com
-:sectanchors:
-:toc:
-:hide-uri-scheme:
-endif::[]
 
-= Securing Jenkins
+Jenkins is used everywhere from workstations on corporate intranets, to high-powered servers connected to the public internet.
+To safely support this wide spread of security and threat profiles, Jenkins offers many configuration options for enabling, customizing, or disabling various security features.
 
-This chapter covers the secure configuration of Jenkins.
+Many of the security options are enabled by default when passing the interactive setup wizard to ensure that Jenkins is secure.
+Others involve environment-specific setup and trade-offs and depend on specific use cases supported in individual Jenkins instances.
+
+// TODO: Also not immediately security-related features
+This chapter will introduce the various security options available to Jenkins administrators and users, explaining the protections offered, and trade-offs to disabling some of them.
+It is split into sections for each of the following topics:
+
+* Initial Setup explores the default settings and the motivation for them.
+* Infrastructure discusses the considerations for and impact of the environment into which Jenkins is deployed.
+* System-wide settings, which include authentication and authorization of Jenkins users, making use of infrastructure for distributed builds, and other settings that protect Jenkins and Jenkins users from attacks.
+* Security considerations when configuring individual jobs.
+

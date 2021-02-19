@@ -2,11 +2,11 @@
 chapters:
   - getting-started
   - installing
-  - security
   - using
   - pipeline
   - blueocean
   - managing
+  - security
   - system-administration
   - scaling
   - appendix

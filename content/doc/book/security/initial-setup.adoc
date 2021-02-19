@@ -1,0 +1,15 @@
+---
+title: Initial Setup
+layout: documentation
+---
+
+This section describes the options set when going through the Jenkins setup wizard.
+This is the default unless Jenkins is set up to skip the wizard.
+
+## Jenkins user database
+
+Jenkins is configured to use the internal Jenkins user database.
+A single user `admin` exists, but it can be renamed during setup.
+
+//TODO 
+

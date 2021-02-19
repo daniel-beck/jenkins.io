@@ -1,5 +1,15 @@
 ---
 sections:
+# index -- implied overview
+- initial-setup
+- infrastructure
+- system
+- job
+
+# Legacy sections
 - securing-jenkins
-- configuring-content-security-policy
-- build-authorization
+- managing-security
+
+# Individual how-to pages
+# configuring-content-security-policy
+# build-authorization
