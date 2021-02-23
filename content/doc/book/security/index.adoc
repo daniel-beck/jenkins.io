@@ -13,7 +13,7 @@ Others involve environment-specific setup and trade-offs and depend on specific 
 This chapter will introduce the various security options available to Jenkins administrators and users, explaining the protections offered, and trade-offs to disabling some of them.
 It is split into sections for each of the following topics:
 
-* Initial Setup explores the default settings and the motivation for them.
+//* Initial Setup explores the default settings and the motivation for them.
 * Infrastructure discusses the considerations for and impact of the environment into which Jenkins is deployed.
 * System-wide settings, which include authentication and authorization of Jenkins users, making use of infrastructure for distributed builds, and other settings that protect Jenkins and Jenkins users from attacks.
 * Security considerations when configuring individual jobs.
