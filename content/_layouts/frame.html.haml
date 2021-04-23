@@ -47,7 +47,7 @@
     / Open Graph data
     %meta{:content => page.title, :property => "og:title"}/
     %meta{:content => "article", :property => "og:type"}/
-    %meta{:content => expand_link(page.output_path), :property => "og:url"}/
+    %meta{:content => absolute_link(page.output_path), :property => "og:url"}/
     %meta{:content => description, :name => "og:description"}/
     %meta{:content => page.title, :property => "og:site_name"}/
     %meta{:content => opengraph_image, :name => "og:image"}/
@@ -79,6 +79,8 @@
     %link{:href => expand_link("/css/font-awesome.min.css"),
       :rel => 'stylesheet',
       :media => 'screen'}/
+    %link{:href => "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css",
+      :rel => 'stylesheet'}/
 
   %body
     %script{:src => expand_link("/assets/bower/jquery/jquery.min.js")}
@@ -132,7 +134,7 @@
                           Documentation
                       %li
                         %a{:href => 'https://plugins.jenkins.io/'}
-                          Plugins    
+                          Plugins
                       %li
                         %a{:href => expand_link("security")}
                           Security
@@ -152,8 +154,8 @@
                         %a{:href => 'https://issues.jenkins.io'}
                           Issue tracker
                       %li
-                        %a{:href => 'https://wiki.jenkins.io'}
-                          Wiki
+                        %a{:href => expand_link("project/roadmap")}
+                          Roadmap
                       %li
                         %a{:href => 'https://github.com/jenkinsci'}
                           GitHub
@@ -230,3 +232,14 @@
           $body.removeClass("no-outline");
         })
       })
+
+    %script{:type => "text/javascript", :src => "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"}
+    %script{:type => "text/javascript"}
+      :plain
+        docsearch({
+          apiKey: '9df657b854f8c42d9887b34bc275db4d',
+          indexName: 'jenkins',
+          inputSelector: 'input.searchbox',
+          algoliaOptions: { 'facetFilters': ["tags:en"] },
+          debug: false
+        });

@@ -1,5 +1,5 @@
 %nav#ji-toolbar.navbar.navbar-expand-lg.navbar-dark.top.bg-dark.fixed-top
-  %a.navbar-brand{:href => site.base_url}
+  %a.navbar-brand{:href => expand_link('/')}
     = site.base_title
   %button.navbar-toggler{"data-target" => "#CollapsingNavbar", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
@@ -82,8 +82,8 @@
           %a.dropdown-item.feature{:href => expand_link('mailing-lists'),
                             :title => "Browse Jenkins mailing list archives and/or subscribe to lists"}
             Mailing Lists
-          %a.dropdown-item.feature{:href => "https://wiki.jenkins.io/"}
-            Wiki
+          %a.dropdown-item.feature{:href => expand_link('project/roadmap')}
+            Roadmap
           %a.dropdown-item.feature{:href => "https://accounts.jenkins.io/", :title => "Create/manage your account for accessing wiki, issue tracker, etc"}
             Account Management
 
@@ -112,6 +112,8 @@
         = partial("dropdown.html.haml", :name => "About")
 
         .dropdown-menu
+          %a.dropdown-item{:href => expand_link('project/roadmap')}
+            Roadmap
           %a.dropdown-item{:href => expand_link('security')}
             Security
           %a.dropdown-item{:href => expand_link('press')}
@@ -133,6 +135,9 @@
       %li.nav-item
         %a.nav-link.btn.btn-outline-secondary{:href => expand_link('download')}
           Download
+
+      %li.nav-item.searchbox
+        %input.form-control.searchbox{:type => "search", :placeholder => "Search", :aria => { :label => "Search" }}
 / Spacing to make the fixed-top sticky navbar not occlude any content below it
 .pt-4
   &nbsp;

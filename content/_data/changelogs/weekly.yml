@@ -10326,6 +10326,566 @@
   # pull: 5294 (PR title: Use FINE not FINEST for log messages that used to be INFO)
   # pull: 5295 (PR title: Update ATH)
 
+- version: '2.282'
+  date: 2021-03-02
+  changes:
+  - type: major bug
+    category: regression
+    pull: 5317
+    authors:
+    - olamy
+    references:
+      - pull: 5317
+      - url: https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.38.v20210224
+        title: Jetty 9.4.38 changelog
+      - url: https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.37.v20210219
+        title: Jetty 9.4.37 changelog
+      - url: https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.36.v20210114
+        title: Jetty 9.4.36 changelog
+    message: |-
+      Update Eclipse Jetty from 9.4.35.v20201120 to 9.4.38.v20210224 for bug fixes and enhancements.
+  - type: major rfe
+    category: major rfe
+    pull: 5049
+    issue: 64107
+    authors:
+    - kuisathaverat
+    - timja
+    references:
+      - issue: 55582
+      - issue: 64107
+      - pull: 5049
+      - url: https://github.com/jenkinsci/sshd-module
+        title: SSHD module repository
+    message: |-
+      SSHD module is no longer bundled in Jenkins core.
+      Provide SSHD as a plugin.
+  - type: rfe
+    category: rfe
+    pull: 5311
+    authors:
+    - basil
+    message: |-
+      Do not force plugin upgrades of recently detached plugins.
+  - type: rfe
+    category: rfe
+    pull: 5292
+    authors:
+    - dependabot
+    references:
+      - pull: 5292
+      - url: "https://github.com/jenkinsci/remoting/releases/tag/remoting-4.7"
+        title: Remoting 4.7 changelog
+    message: |-
+      Upgrade from Remoting 4.6 to Remoting 4.7 with bugfixes and dependency updates.
+  - type: rfe
+    category: rfe
+    pull: 5266
+    authors:
+    - gulyaev13
+    message: |-
+      Remove the hardcoded JKS key store so that other key stores can be used, like BCFKS from the FIPS version of Bouncy Castle.
+  - type: bug
+    category: bug
+    pull: 5138
+    issue: 64510
+    authors:
+    - jeffret-b
+    message: |-
+      Improve reconnection behavior for inbound TCP agents.
+  - type: bug
+    category: bug
+    pull: 5301
+    authors:
+    - jvz
+    message: |-
+      Internal: Ensure that <code>Jenkins#setViews()</code> updates the configuration only when all views are successfully set.
+
+  # pull: 5054 (PR title: Log a message about the interrupted exception at this level)
+  # pull: 5272 (PR title: Bump jline from 2.12 to 2.14.6)
+  # pull: 5289 (PR title: Bump frontend-maven-plugin from 1.11.0 to 1.11.2)
+  # pull: 5300 (PR title: Bump spring-security-bom from 5.4.4 to 5.4.5)
+  # pull: 5307 (PR title: Bump mockito-core from 3.7.7 to 3.8.0)
+  # pull: 5312 (PR title: Replace usages of deprecated jenkins.widgets.HistoryPageFilter.add(java.util.List) with non-deprecated jenkins.widgets.HistoryPageFilter.add(Iterable))
+  # pull: 5313 (PR title: Use native Java functionality rather than Guava's Lists#newArrayList, Maps#newHashMap, and Sets#newHashSet where possible)
+  # pull: 5314 (PR title: Clean up JUnit assertions)
+  # pull: 5315 (PR title: Update jetty-maven-plugin to match winstone)
+
+- version: '2.283'
+  date: 2021-03-09
+  changes:
+  - type: major bug
+    category: regression
+    pull: 5316
+    issue: 64972
+    authors:
+    - benebsiny
+    message: |-
+      Fix help buttons in the draggable section (regression in 2.264).
+  - type: major rfe
+    category: major rfe
+    pull: 5065
+    authors:
+    - timja
+    - fqueiruga
+    - josephbrueggen
+    message: |-
+      Add modern icons: build status and weather.
+  - type: bug
+    category: bug
+    pull: 5341
+    authors:
+    - felfert
+    message: |-
+      Accept negative numbers in number input controls (regression in 2.274).
+  - type: bug
+    category: bug
+    pull: 5305
+    issue: 64931
+    authors:
+    - olamy
+    message: |-
+      Prevent Jenkins queue deadlock when cancelling tasks under certain conditions.
+  - type: bug
+    category: bug
+    pull: 5333
+    issue: 65017
+    authors:
+    - daniel-beck
+    message: |-
+      Do not render full error responses in case of internal errors when validating fields in configuration forms.
+  - type: bug
+    category: bug
+    pull: 5326
+    authors:
+    - jglick
+    message: |-
+      Lower verbosity of a <code>Queue.save()</code> error message.
+  - type: rfe
+    category: rfe
+    pull: 5078
+    authors:
+    - daniel-beck
+    - fqueiruga
+    message: |-
+      Add indicator for security-related entries in the global administrative monitors configuration.
+  - type: rfe
+    category: rfe
+    pull: 5334
+    authors:
+    - takashiharano
+    message: |-
+      Add Japanese translations for New Job screen.
+  - type: major rfe
+    category: major rfe
+    pull: 5065
+    authors:
+    - timja
+    - fqueiruga
+    - josephbrueggen
+    references:
+      - pull: 5065
+      - url: https://github.com/jenkinsci/github-branch-source-plugin/pull/393
+        title: Example external SVG sprite implementation in GitHub Branch Source plugin
+    message: |-
+      Developer: Add support for plugins to use external SVG sprites in their icons.
+
+  # pull: 5235 (PR title: replaced MS_SHOULD_BE_FINAL general spotbugs exclude with individual excludes)
+  # pull: 5242 (PR title: Bump antisamy-markup-formatter from 1.0 to 2.1)
+  # pull: 5309 (PR title: Bump structs from 1.21 to 1.22)
+  # pull: 5322 (PR title: Migrate from Guava's com.google.common.util.concurrent.SettableFuture to Java 8's java.util.concurrent.CompletableFuture)
+  # pull: 5323 (PR title: Add missing @Override annotations)
+  # pull: 5327 (PR title: Delete SSH-specific scenarios from CLITest)
+  # pull: 5330 (PR title: Bump sshd from 3.0.1 to 3.0.3)
+  # pull: 5339 (PR title: Declare modifiers in JLS order)
+  # pull: 5340 (PR title: Migrate from com.google.common.base.Function to java.util.function.Consumer in hudson.model.listeners.ItemListener)
+  # pull: 5343 (PR title: Bump Node.js from 14.15.1 to 14.16.0)
+
+- version: '2.284'
+  date: 2021-03-16
+  changes:
+  - type: major bug
+    category: regression
+    pull: 5354
+    authors:
+    - timja
+    message: |-
+      Gear, clipboard, and user icons are transparent again (regression in 2.283).
+  - type: rfe
+    category: rfe
+    pull: 5338
+    authors:
+    - basil
+    references:
+      - pull: 5338
+      - url: https://plugins.jenkins.io/ant
+        title: Ant plugin
+      - url: https://plugins.jenkins.io/javadoc
+        title: Javadoc plugin
+      - url: https://plugins.jenkins.io/rad-builder
+        title: RAD Builder plugin
+    message: |-
+      Stop bundling the Ant and Javadoc plugins.
+      Jenkins will no longer automatically install the Ant and Javadoc plugins on startup if a plugin depending on Jenkins (then Hudson) 1.430 or earlier is discovered.
+      If you use such a plugin that also relies on the functionality provided by the Ant or Javadoc plugin (e.g., the RAD Builder and manage plugins outside the Jenkins plugin manager, you will now need to ensure that a recent release of the Ant or Javadoc plugin is installed.
+      Jenkins will attempt to load such plugins but may fail at any time during startup or afterwards with <code>ClassNotFoundException</code> or similar.
+  - type: rfe
+    category: rfe
+    pull: 5206
+    authors:
+    - res0nance
+    message: |-
+      Update Jenkins CLI to SSHD Core from 1.7.0 to 2.6.0.
+  - type: rfe
+    category: localization
+    pull: 5350
+    authors:
+    - takashiharano
+    message: |-
+      Add Japanese translations for Dashboard, Views, Rename.
+
+  # pull: 5258 (PR title: Remove deprecated and unused jenkins.widgets.HistoryPageFilter.add(java.util.List))
+  # pull: 5342 (PR title: Use versions from parent POM where possible)
+  # pull: 5346 (PR title: Bump Checkstyle from 8.29 to 8.41 and enable additional checks)
+  # pull: 5348 (PR title: Bump jnr-posix from 3.1.4 to 3.1.5)
+  # pull: 5355 (PR title: Fix build issues)
+  # pull: 5356 (PR title: Fix sort order)
+  # pull: 5357 (PR title: Test cleanup)
+
+- version: '2.285'
+  date: 2021-03-23
+  changes:
+  - type: rfe
+    category: rfe
+    pull: 4623
+    authors:
+    - daniel-beck
+    message: |-
+      Switch to sending POST requests by default for form validation URLs.
+  - type: rfe
+    category: rfe
+    pull: 5366
+    authors:
+    - dependabot[bot]
+    references:
+      - pull: 5366
+      - url: https://www.jenkins.io/security/advisory/2021-03-18/
+        title: Security Advisory 2021-03-18
+    message: |-
+      Bump matrix-auth from 2.6.5 to 2.6.6.
+  - type: rfe
+    category: rfe
+    pull: 5360
+    authors:
+    - MarkEWaite
+    references:
+      - pull: 5360
+      - url: https://x-stream.github.io/changes.html#1.4.16
+        title: XStream 1.4.16
+    message: |-
+      Upgrade from xstream 1.4.15 to 1.4.16.
+  - type: rfe
+    category: rfe
+    pull: 5347
+    authors:
+    - jeffret-b
+    references:
+      - pull: 5347
+      - url: https://github.com/jenkinsci/bouncycastle-api-plugin/releases/tag/bouncycastle-api-2.20
+        title: bouncycastle-api 2.20 changelog
+      - url: https://github.com/jenkinsci/bouncycastle-api-plugin/releases/tag/bouncycastle-api-2.18
+        title: bouncycastle-api 2.18 changelog
+      - url: https://github.com/jenkinsci/bouncycastle-api-plugin/blob/master/docs/CHANGELOG.md#217
+        title: bouncycastle-api 2.17 changelog
+      - url: https://github.com/jenkinsci/bouncycastle-api-plugin/blob/master/docs/CHANGELOG.md#2163
+        title: bouncycastle-api 2.16.3 changelog
+      - url: https://github.com/jenkinsci/bouncycastle-api-plugin/blob/master/docs/CHANGELOG.md#2162
+        title: bouncycastle-api 2.16.2 changelog
+      - url: https://github.com/jenkinsci/bouncycastle-api-plugin/blob/master/docs/CHANGELOG.md#2161
+        title: bouncycastle-api 2.16.1 changelog
+      - url: https://www.bouncycastle.org/releasenotes.html
+        title: Bouncy Castle library 1.64 release notes
+    message: |-
+      Upgrade bouncycastle-api plugin from 2.16.0 to 2.20.
+      Upgrade Bouncy Castle library to 1.64.
+  - type: bug
+    category: bug
+    pull: 5367
+    issue: 62006
+    authors:
+    - timja
+    message: |-
+      Fix <code>NoClassDefFoundError</code> exception while executing <code>ProcessTree.get()</code>.
+  - type: bug
+    category: bug
+    pull: 5359
+    authors:
+    - res0nance
+    message: |-
+      Sort available plugins by name when popularity is equal.
+
+  # pull: 5362 (PR title: Bump mailer from 1.32.1 to 1.33)
+  # pull: 5363 (PR title: Bump release-drafter/release-drafter from v5.14.0 to v5.15.0)
+  # pull: 5364 (PR title: Update at-since annotations up to 2.284)
+
+- version: '2.286'
+  date: 2021-03-30
+  changes:
+  - type: security
+    message: Important security fix.
+    references:
+      - url: /security/advisory/2021-04-20/
+        title: 2021-04-20 security advisory
+  - type: major bug
+    category: regression
+    pull: 5379
+    issue: 65021
+    authors:
+    - benebsiny
+    message: |-
+      Fix disabled dropdown items to appear disabled (regression in 2.264).
+  - type: rfe
+    category: rfe
+    pull: 5365
+    issue: 65172
+    authors:
+    - daniel-beck
+    message: |-
+      Improve support for update site-defined setup wizard suggestions.
+  - type: rfe
+    category: rfe
+    pull: 5370
+    issue: 36707
+    authors:
+    - usmonster
+    message: |-
+      Add a "CI" environment variable, always set to "true" as in most other CI solutions.
+      Note that the presence of this variable may change behavior of some of the tools used in your pipelines.
+  - type: rfe
+    category: rfe
+    pull: 5192
+    issue: 63855
+    authors:
+    - benebsiny
+    - oleg-nenashev
+    message: |-
+      Support 'min' and 'max' values in field definitions of forms.
+  - type: rfe
+    category: rfe
+    pull: 5337
+    authors:
+    - jeffret-b
+    - res0nance
+    message: |-
+      Add administrative monitors recommending no executors are configured on the controller.
+  - type: rfe
+    category: rfe
+    pull: 5368
+    authors:
+    - daniel-beck
+    message: |-
+      Add a Jenkins User-Agent header to outgoing HTTP requests by default.
+      Use <code>jenkins.UserAgentURLConnectionDecorator.disabled</code> to disable it if needed.
+  - type: rfe
+    category: rfe
+    pull: 5380
+    authors:
+    - olamy
+    references:
+      - url: /security/advisory/2021-04-20/
+        title: 2021-04-20 security advisory
+      - pull: 5380
+      - url: https://github.com/jenkinsci/winstone/releases/tag/winstone-5.16
+        title: Winstone 5.16 changelog
+      - url: https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.39.v20210325
+        title: Jetty 9.4.39.v20210325 changelog
+    message: |-
+      Winstone 5.16: Update Jetty from 9.4.38.v20210224 to 9.4.39.v20210325 for bug fixes and enhancements.
+  - type: rfe
+    category: rfe
+    pull: 5381
+    authors:
+    - dependabot[bot]
+    references:
+      - pull: 5381
+      - url: https://github.com/java-native-access/jna/blob/master/CHANGES.md#release-580
+        title: JNA 5.8.0 changelog
+    message: |-
+      Bump jna from 5.7.0 to 5.8.0.
+
+  # pull: 5353 (PR title: Bump junit from 1.48 to 1.49)
+  # pull: 5369 (PR title: Bump objenesis from 3.1 to 3.2)
+  # pull: 5375 (PR title: fix non compilable code on eclipse compiler)
+  # pull: 5376 (PR title: Refactored multiple assertion tests into parameterized ones)
+  # pull: 5378 (PR title: frontend-maven-plugin from 1.11.2 to 1.11.3)
+- version: '2.287'
+  date: 2021-04-07
+  changes:
+  - type: security
+    message: Security fixes.
+    references:
+      - url: /security/advisory/2021-04-07/
+        title: security advisory
+    authors:
+      - daniel-beck
+      - jvz
+  - type: rfe
+    message: Security hardening against some CSRF attacks.
+    references:
+      - url: /doc/upgrade-guide/2.277/#submittedform
+        title: related LTS upgrade guide entry
+    authors:
+      - daniel-beck
+
+- version: '2.288'
+  date: 2021-04-11
+  changes:
+  - type: rfe
+    category: rfe
+    pull: 5402
+    issue: 65308
+    authors:
+    - res0nance
+    message: |-
+      Reduce task queue lock contention when creating or deleting nodes.
+  - type: rfe
+    category: rfe
+    pull: 5392
+    authors:
+    - uhafner
+    message: |-
+      Simplify icon for unstable builds (use an exclamation mark).
+  - type: bug
+    category: regression
+    pull: 5408
+    issue: 65336
+    authors:
+    - MarkEWaite
+    message: |-
+      Fix load statistics graph links to include correct graph duration (regression in 2.264).
+  - type: bug
+    category: bug
+    pull: 5377
+    issue: 56934
+    authors:
+    - jtnord
+    message: |-
+      Honor the current folder when creating new views with the "New View" link.
+  - type: rfe
+    category: localization
+    pull: 5387
+    authors:
+    - mustafau
+    message: |-
+      Add Turkish translations for new login form.
+  - type: rfe
+    category: developer
+    pull: 5385
+    authors:
+    - alecharp
+    message: |-
+      Developer: Remove unnecessary bundled handlebars asset.
+      There is no expected impact on plugins depending on handlebars.
+  - type: rfe
+    category: developer
+    pull: 5391
+    issue: 65288
+    authors:
+    - Wadeck
+    message: |-
+      Developer: Restore support for Jelly debugging with <code>stapler.jelly.trace</code>.
+  - type: rfe
+    category: internal
+    pull: 5324
+    authors:
+    - daniel-beck
+    - jglick
+    references:
+      - pull: 5324
+      - url: https://github.com/stapler/stapler/releases/tag/stapler-parent-1.263
+        title: Stapler 1.263 release notes
+      - url: https://commons.apache.org/proper/commons-beanutils/changes-report.html#a1.9.4
+        title: Apache commons beanutils 1.9.4 release notes
+    message: |-
+      Internal: Update Stapler from 1.262.1 to 1.263 to use latest Apache commons-beanutils.
+      Update Apache commons-beanutils from 1.9.3 to 1.9.4.
+
+  # pull: 5373 (PR title: Bump mailer from 1.33 to 1.34)
+  # pull: 5386 (PR title: Bump checkstyle from 8.41 to 8.41.1)
+  # pull: 5388 (PR title: Update login_tr.properties)
+  # pull: 5389 (PR title: fixed some deprecation warnings)
+  # pull: 5393 (PR title: Fixing deprecation link in Util.isAbsoluteUri)
+  # pull: 5395 (PR title: [JENKINS-65291] Update recommendations to be more specific)
+  # pull: 5396 (PR title: Do not shorten "number" to "#")
+  # pull: 5397 (PR title: Bump actions/upload-artifact from v2.2.2 to v2.2.3)
+  # pull: 5398 (PR title: Fix Java11 telemetry test broken after end of its sendings (MissingClassTelemetryTest))
+  # pull: 5399 (PR title: Merge back security tests into corresponding main test classes)
+
+- version: '2.289'
+  date: 2021-04-20
+  changes:
+  - type: major bug
+    category: regression
+    pull: 5411
+    issue: 65327
+    authors:
+    - basil
+    message: |-
+      Ensure that file parameters correctly overwrite previous files (regression in 2.278).
+  - type: bug
+    category: bug
+    pull: 5405
+    issue: 53462
+    authors:
+    - daniel-beck
+    message: |-
+      Stop using deprecated untrusted submit events on modern browsers for compatibility with future Firefox releases.
+  - type: rfe
+    category: rfe
+    pull: 5424
+    authors:
+    - daniel-beck
+    message: |-
+      Improve UI of slow trigger administrative monitor.
+  - type: rfe
+    category: rfe
+    pull: 5412
+    issue: 65308
+    authors:
+    - res0nance
+    message: |-
+      Improve performance when creating or deleting nodes by reducing queue-lock contention.
+  - type: rfe
+    category: rfe
+    pull: 5413
+    authors:
+    - dependabot[bot]
+    references:
+      - pull: 5413
+      - url: https://github.com/spring-projects/spring-security/releases/tag/5.4.6
+        title: Spring project spring-security 5.4.6 release notes
+    message: |-
+      Bump spring-security-bom from 5.4.5 to 5.4.6.
+  - type: rfe
+    category: localization
+    pull: 5410
+    authors:
+    - takashiharano
+    message: |-
+      Update Japanese translations for login screen.
+
+  # pull: 5403 (PR title: Ignore jetty 10.x and jetty 11.x updates)
+  # pull: 5414 (PR title: Update at-since annotations up to 2.288)
+  # pull: 5416 (PR title: Fix typo in Turkish translation of Configuration)
+  # pull: 5418 (PR title: Reduce usages of com.google.common.collect in tests)
+  # pull: 5419 (PR title: Use declaring class as qualifier)
+  # pull: 5421 (PR title: Reduce usages of com.google.common.base)
+  # pull: 5426 (PR title: Adapt to current jenkins-test-harness)
+  # pull: 5428 (PR title: Ignore Dependabot updates for japicmp-maven-plugin)
+  # pull: 5429 (PR title: Format POM files)
+  # pull: 5431 (PR title: Fix form validation message for command tool installers)
+  # pull: 5432 (PR title: Update Jira references from HUDSON to JENKINS)
+
 # DO NOT EDIT THIS FILE DIRECTLY ON GITHUB IF YOU HAVE COMMIT ACCESS
 # ALL CHANGES MUST GO THROUGH PULL REQUESTS
 # MALFORMED FILE CONTENTS WILL BREAK THE SITE BUILD
