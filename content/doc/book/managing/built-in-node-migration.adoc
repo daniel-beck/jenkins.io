@@ -1,6 +1,7 @@
 ---
 layout: documentation
 title: Built-In Node Name and Label Migration
+# Included in 2-319-1.adoc upgrade guide which skips the first 5 lines. That files needs updating when changing the front matter length here.
 ---
 
 As part of the link:https://groups.google.com/g/jenkinsci-dev/c/x5vdlJDvntw[terminology cleanup effort], the built-in node was renamed from "master node" to "built-in node" in Jenkins 2.307.
